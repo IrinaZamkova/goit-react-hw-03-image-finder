@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Lay } from "./style.component";
 
-const Layout = ({ children }) => <div>{children}</div>;
+const Layout = ({ children }) => <Lay>{children}</Lay>;
 
 export default Layout;
 
