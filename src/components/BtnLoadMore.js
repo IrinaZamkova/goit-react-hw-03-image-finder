@@ -4,7 +4,7 @@ import { BtnLoad } from "./style.component";
 
 const BtnLoadMore = ({onClick}) => {
     return(
-<BtnLoad onClick={onClick}>Load more...</BtnLoad>)}
+<BtnLoad onClick={onClick} >Load more...</BtnLoad>)}
 export default BtnLoadMore;
 
 BtnLoadMore.propTypes = {

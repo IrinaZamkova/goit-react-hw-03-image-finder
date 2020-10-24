@@ -25,7 +25,7 @@ export default class App extends Component {
     largeImageURL: null,
   };
   componentDidUpdate(prevProps, prevState) {
-    const { query, largeImageURL, page } = this.state;
+    const { query, largeImageURL} = this.state;
     if (prevState.query !== query) {
       this.fetchImg();
     }
@@ -34,12 +34,7 @@ export default class App extends Component {
     } else {
       window.removeEventListener("keydown", this.onCloseModalEscape);
     }
-    if (prevState.page !== page) {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight - 170,
-        behavior: "smooth",
-      });
-    }
+
   }
 
   fetchImg = () => {
@@ -51,7 +46,14 @@ export default class App extends Component {
             hits: [...prevState.hits, ...res],
             page: prevState.page + 1,
           };
+          
         });
+      
+       window.scrollTo({
+          top: document.documentElement.scrollHeight ,
+          behavior: "smooth",
+        });
+          
       })
       .catch((err) => this.setState({ err }))
       .finally(() => this.setState({ loading: false }));
